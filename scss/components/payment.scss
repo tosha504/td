@@ -1,0 +1,55 @@
+.payment {
+    display: flex;
+    @media (max-width:$bp3) {
+        flex-wrap: wrap-reverse;
+    }
+
+    &__left, &__right {
+        flex: 1 1 50%;
+        @media (max-width:$bp3) {
+            flex: 1 1 100%;
+            min-height: 600px;
+        }
+        @media (max-width:$bp1) {
+            min-height: 500px;
+        }
+    }
+
+    &__left {
+        &_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+        }
+
+        &-title {
+            @include fontz(28px, 15);
+            color: $white;
+            text-align: center;
+            margin: 50px 0;
+            line-height: 110%;
+            span{
+                color: $primary;
+            }
+        }
+
+        &_methods {
+            display: flex;
+            padding: 10px 40px;
+            border-radius: 80px;
+            background: $white;
+            @media (max-width:$bp1) {
+                padding: 0;
+                background: transparent;
+            }
+
+            img {
+                width: 90px;
+                height: 90px;
+                margin: 10px;
+            }
+        }
+    }
+}

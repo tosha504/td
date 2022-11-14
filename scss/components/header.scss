@@ -1,0 +1,298 @@
+.header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 25px solid $primary;
+
+    .container , &__left, &__links , .menu{
+        display: flex;
+        align-items: center;
+        
+    }
+
+   
+    #location_select {
+        margin-right: 20px;
+
+        select {
+        background: $primary;
+        text-align: center;
+        color: $white;
+        outline: none;
+        // border: none;
+        // border-radius: 40px;
+        cursor: pointer;
+        padding: 5px 10px;
+        font-size: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        position: relative;
+            &::before {
+                content: '1';
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    .container {
+        justify-content: space-between;
+    }
+
+    .btn__primary {
+        padding: 10px 20px;
+        border-radius: 40px;
+        color: $white !important;
+        font-weight: 500;
+        @media (min-width:$bp3) {
+            &:hover {
+                color: $primary !important;
+            }
+        }
+    }
+
+    &__left {
+        @media (max-width:$bp3) {
+            display: none;
+        }
+    }
+
+    .menu {
+        @media (min-width:$bp3) {
+            margin: 0 20px;
+            @media (max-width:$bp4) {
+                margin: 0 10px;
+            }
+            li {
+                margin: 0 10px;
+                @media (max-width:$bp4) {
+                    margin: 0 5px;
+                }
+                a {
+                    color: $body;
+                    @media (min-width:$bp3) {
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__logo {
+        img {
+            transition: 0.35s;
+        }
+        @media (min-width:$bp2) and (max-width:$bp3) {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__links {
+        display: none;
+        @media (min-width:$bp3) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                margin: 0 5px;
+                @media (min-width:$bp4) {
+                    &:hover {
+                        img {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+            img {
+                transition: 0.3s;
+                max-width: 30px;
+            }
+        }
+    }
+
+    &__mobile-navigation {
+        display: none;
+        @media (max-width: $bp3) {  
+            display: block;
+            padding: 50px;
+            background-color: $white;
+            position: fixed;
+            left: -100%;
+            top: 0;
+            bottom: 0;
+            z-index: 1000;
+            align-items: start;
+            flex-direction: column;
+            overflow: auto;
+            transition: all .5s;
+            
+            
+            &.active {
+                display: flex;
+                width: 80%;
+                left: 0;
+                a {
+                    color: $primary;
+                }
+            }
+        
+        
+            li {
+                margin: 10px 0;
+                &:not(:last-child) {
+                    @media (min-width:$bp4) {
+                        margin-right: 20px;
+                    }
+                    @media (min-width:$bp5) {
+                        margin-right: 35px;
+                    }
+                }
+            }
+
+            a {
+                white-space: nowrap;
+                color: $white;
+                font-size: 18px;
+                font-weight: 600;
+                @media (min-width:$bp4) {
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+                
+            }
+            
+            &_links {
+                position: absolute;
+                bottom: 50px;
+                left: 50px;
+            }
+            
+            .menu-mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+        
+    
+    #menu-kosyzk {
+        li {
+            a { 
+                i {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        background: url('../assets/koszyk.svg') no-repeat center/cover;
+                        position: absolute;
+                        width: 25px;
+                        height: 30px;
+                        top: -15px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__menu-shop {
+        display: flex;
+        align-items: center;
+
+        &_count {
+            top: -12px;
+            position: relative;
+            right: 0;
+            font-size: 13px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: $primary;
+            color: $white;
+        }
+
+        
+        @media (max-width:$bp4) {
+            position: absolute;
+            right: 8%;
+        }
+        @media (max-width:$bp3) {
+            right: 10%;
+        }
+        @media (max-width:$bp2) {
+            right: 14%;
+        }
+        @media (max-width:$bp1) {
+            right: 17%;
+        }
+
+        .btn__primary {
+            margin-left: 20px;
+        }
+    }
+   
+
+    &__burger {
+        z-index: 3;
+        display: none;
+        position: relative;
+        width: 40px;
+        right: 15px;
+
+        span {
+            background-color: $primary;
+            height: 3px;
+            width: 40px;
+            position: absolute;
+            transition: 0.4s;
+
+            &:before, &:after{
+                background-color: $primary;
+                width: 40px;
+                left: 0;
+            }
+        
+            &:before {
+              position: absolute;
+              top: 8px;
+              content: "";
+              height: 3px;
+              transition: 0.4s;
+
+            }
+            &:after {
+              position: absolute;
+              bottom: 8px;
+              content: "";
+              height: 3px;
+            }
+        
+            &.active {
+              transform: rotate(-45deg);
+              &:before {
+                transform: rotate(90deg);
+                top: 0;
+              }
+              &::after {
+                opacity: 0;
+              }
+            }
+        }
+
+        @media (max-width: $bp3) {
+            display: block;
+        }
+    }
+}

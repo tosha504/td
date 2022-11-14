@@ -1,0 +1,48 @@
+.banner {
+    position: relative;
+    padding: 100px 0;
+    @media (max-width: $bp2) {
+        background-position: left !important;
+    }
+
+    @media (max-width: $bp1) {
+       padding: 50px 0;
+    }
+
+    .container {
+        @media (max-width: $bp2) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        .btn {
+            padding: 10px 15px;
+        }
+    }
+
+    &__title {
+        @include fontz(40px, 36);
+        font-weight: bold;
+        color: $primary;
+        line-height: 130%;
+        span {
+            color: $white;
+        }
+        @media (min-width:$bp1) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__img-phone {
+        align-items: center;
+        justify-content: center;
+        display: none;
+        @media (max-width: $bp1) {
+            display: flex;
+        }
+    }
+
+}

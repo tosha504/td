@@ -1,0 +1,81 @@
+.app {
+    display: flex;
+    position: relative;
+    @media (max-width:$bp3) { 
+        flex-wrap: wrap;
+    }
+
+    &__left, &__right  {
+        flex: 1 1 50%;
+        @media (max-width:$bp3) { 
+            flex: 1 1 100%;
+        }
+    }
+
+    &__left {
+        min-height: 500px;
+        @media (max-width:$bp3) { 
+            background-position: top right !important;
+        }
+        @media (max-width:$bp1) { 
+            background-position: center !important;
+        }
+    }
+
+    .size-large {
+        display: none;
+        @media (min-width:$bp3) {
+            display: block;
+            position: absolute;
+            top: 55%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            @media (min-width:$bp5) { 
+                left: 45%;
+            }
+        }
+    }
+
+    &__right {
+        padding: 5% 10%;
+        @media (max-width:$bp3) { 
+            padding: 15%;
+        }
+        background-color: #efe3cd;
+    }
+
+    &__content {
+        &-title {
+            @include fontz(40px, 17);
+            line-height: 115%;
+            margin-bottom: 50px;
+            span {
+                color: $primary;
+            }
+        }
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            max-width: 300px;
+            margin-bottom: 50px;
+           
+            a {
+                img {
+                    transition: 0.35s;
+                }
+                @media (min-width:$bp3) {
+                    &:hover {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        &-description {
+            max-width: 400px;
+        }
+    }
+}

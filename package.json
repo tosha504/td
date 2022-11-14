@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "minifyJS": "uglifyjs src/js/index.js --compress --mangle --warn --output src/scripts.min.js",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js --watch"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.2.0",
+    "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
+    "import-glob-loader": "^1.1.0",
+    "laravel-mix": "^6.0.18"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "postcss": "^8.2.13",
+    "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
+    "uglify-js": "^3.3.11"
+  }
+}

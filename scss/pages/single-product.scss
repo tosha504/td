@@ -1,0 +1,135 @@
+body {
+    &.single-product {
+        
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-top: 50px;
+            .added_to_cart,.wc-forward {
+              display: none;
+            }
+            *{
+                flex: 1 1 100%;
+                @media (min-width:$bp2) {
+                    flex: 1 1 50%;
+                }
+            }
+
+            .woocommerce-product-gallery , .summary {
+                // padding: 20px;
+            }
+
+            .woocommerce-product-gallery  {
+                img {
+                    max-width: 300px;
+                    @media (min-width:$bp3) {
+                        max-width: 500px;
+                    }
+                }
+            }
+
+            .summary{
+                background-color: #f5f6f6;
+                // padding: 40px 60px;
+                padding: 20px;
+                border-radius: 40px ;
+
+                .woocommerce-breadcrumb, .woocommerce-breadcrumb a {
+                    color: $primary;
+                    font-size: 12px;
+                }
+
+                h1 {
+                    @include fontz(20px, 25);
+                }
+
+                .price {
+                    padding: 20px 0 40px;
+                    color: $primary;
+                    font-size: 34px;
+                }
+
+                .woocommerce-product-details__short-description {
+                    padding: 20px 0;
+                    font-size: 14px;
+                }
+
+                .quantity {
+                    font-weight: 600;
+                    padding: 5px;
+                    // width: 40px;
+                    display: inline-block;
+                    position: relative;
+                  
+                    &::after {
+                      content: "";
+                      z-index: 1;
+                      width: 100%;
+                      height: 100%;
+                      left: 0;
+                      top: 0;
+                      position: absolute;
+                  }
+                  
+                    input {
+                      padding: 0;
+                      border: none;
+                      background-color: transparent;
+                      text-align: center;
+                      font-weight: 600;
+                      z-index: -1;
+                      width: 40px;
+                      color: $primary;
+                      font-size: 25px;
+                    }
+                }
+
+                .cart-qty {
+                    border: 1px solid $primary;
+                    font-weight: 600;
+                    padding: 0;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    background-color: transparent;
+                    border-radius: 20px;
+                    position: relative;
+                    z-index: 3;
+                    color: $primary;
+                    font-size: 20px;
+
+                    &.plus {
+                        // margin-left: -15px;
+                    }
+                }
+
+                .cart {
+                    display: flex;
+                    flex-direction: column;
+                    .single_add_to_cart_button {
+                        padding: 10px 20px;
+                        color: $white;
+                        border:none;
+                        background: $primary;
+                        border-radius: 40px;
+                        margin: 20px auto 0 0;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        transition: 0.35s;
+                        border: 1px solid  transparent;
+                        @media (min-width:$bp3) {
+                            &:hover {
+                                background: $white;
+                                color: $primary;
+                                border: 1px solid  $primary;
+                            }
+                        }
+                    }
+                }
+            }
+           
+        }
+    } 
+}

@@ -1,0 +1,127 @@
+.footer {
+    margin-top: auto;
+    padding: 50px 0;
+    background: $primary;
+
+    .container {
+        display: flex;
+        @media (max-width:$bp4) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__left, &__right {
+        flex: 1 1 50%;
+        @media (max-width:$bp4) {
+            flex: 1 1 100%;
+        }
+    }  
+
+    &__left {
+        &_card {
+            background: $white;
+            border-radius: 20px;
+            max-width: 400px;
+            text-align: center;
+            padding: 3% 5%;
+            position: relative;
+            @media (max-width:$bp4) {
+                margin: 0 auto;
+            }
+
+            .size-full {
+                margin-bottom: 25px;
+            }
+
+            &-text {
+                text-align: left;
+                font-size: 14px;
+                margin-bottom: 25px;
+                padding: 0 7%;
+            }
+            
+            &-media {
+                display: flex;
+                justify-content: center;
+                a {
+                    display: flex;
+                    margin: 0 10px;
+                    padding: 15px;
+                    border: 1px solid $body;
+                    border-radius: 50%;
+                    justify-content: center;
+                    align-items: center;
+                    .size-full {
+                        margin-bottom: 0px;
+                        max-width: 30px;
+                    }
+                    @media (min-width:$bp3) {
+                        &:hover {
+                        transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+
+            .size-gallery-thumbnail {
+                display: none;
+                @media (min-width:$bp2) {
+                    display: block;
+                    position: absolute;
+                    right: -219px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+
+    &__right{
+        &_content {
+            color: $white;
+            padding-top: 10%;
+            margin-left: 20%;
+            position: relative;
+            max-width: 270px;
+            @media (max-width:$bp4) {
+                margin: 0 auto;
+            }
+            
+            &-title {
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            &-descr {
+                font-size: 14px;
+                font-weight: light;
+                max-width: 200px;
+                margin-bottom: 15px;
+            }
+
+            &-links {
+                display: flex;
+                flex-direction: column;
+                max-width: 200px;
+                justify-content: center;
+                align-items: flex-start;
+                a {
+                    margin: 5px 0;
+                    padding: 5px 10px;
+                    font-size: 16px;
+                }
+            }
+
+            .size-gallery-thumbnail {
+                display: none;
+                @media (min-width:$bp2) {
+                    display: block;
+                    position: absolute;
+                    right: -219px;
+                    bottom: -50px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.sale {
+    padding: 50px 0;
+    @media (min-width:$bp3) {
+        margin-bottom: 75px;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__slide {
+        margin: 10px;
+        img {
+            border-radius: 20px;
+        }
+    }
+
+     .slick-dots {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            margin: 5px;
+            border: 1px solid $gray;
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: 0.3s;
+            button {
+                display: none;
+            }
+            &.slick-active{
+                background-color: $gray;
+
+            }
+            @media (min-width:$bp3) {
+                &:hover {
+                    background-color: $gray;
+                }
+            }
+            
+        }
+    }
+}

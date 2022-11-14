@@ -1,0 +1,40 @@
+
+.btn {
+
+    border-radius: 20px;
+    @include fontz(13px, 3);
+    font-weight: 400;
+    font-family: $pop;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @media (max-width: $bp2) {
+        max-width: 180px;
+    }
+    
+    
+    &__primary {
+        @include btn($white, $primary, $primary, transparent);
+    }
+
+    &__gray {
+        @include btn($gray, transparent, $primary, $white);
+        border: 1px solid $gray;
+    }
+
+    &__white {
+        @include btn($white, transparent, $body, transparent);
+        border: 1px solid $white;
+    }
+   
+    &__recommended {
+        @include btn($white, $primary, $white, $primary);
+        background-color: transparent;
+        color: $primary;
+
+        @media (min-width:$bp3) {
+            &:hover {
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+//Fonts
+$pop: 'Poppins', sans-serif;
+
+//Colors   
+$primary: #Ed292D; 
+$white: #fff;
+$body : #2D2D2D;
+$gray: #c8c8c8;
+
+//break-points
+$bp1: 576px + 1;
+$bp2: 768px + 1;
+$bp3: 992px + 1;
+$bp4: 1200px + 1;
+$bp5: 1440px + 1;
+
+$width: 1200px;
+
+@mixin fontz($fmx,$fmn){
+    font-size: calc(#{$fmx} + (#{$fmn} * (100vw / 1400)));
+}
+
+@mixin line($lmx,$lmn){
+    line-height: calc(#{$lmx} + (#{$lmn} * (100vw / 1400)));
+}
+
+
+
+@mixin btn ($color, $bgColor, $color-hover, $color-hover-bg) {
+    border: 1px solid $bgColor;
+    color:$color;
+    background-color: $bgColor;
+
+    @media (min-width:$bp3) {
+        &:hover {
+            color: $color-hover;
+            background-color: $color-hover-bg;
+            border: 1px solid $color-hover;
+        }
+    }
+}

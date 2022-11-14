@@ -1,0 +1,281 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  @include fontz(14px ,2);
+	height: 100%;
+	width: 100%;
+  position: relative;
+  font-weight: normal;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	color: $body;
+  font-family: $pop;
+  font-weight: 400;
+}
+
+.fixed-page {
+  overflow: hidden;
+}
+
+.wrapper{
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-main{
+	flex: 1 1 100%;
+}
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  @media (max-width:$bp4) {
+    max-width: 1140px;
+  }
+  @media (max-width:$bp3) {
+    max-width: 960px;
+  }
+  @media (max-width:$bp2) {
+    max-width: 720px;
+  }
+
+  @media (max-width:$bp1) {
+    max-width: 100%;
+    padding: 0px 15px;
+  }
+
+  @media (max-width:$bp1) {
+    padding: 0px 15px;
+  }
+}
+ul {
+  list-style: none;
+}
+a,
+a:active,
+a:hover {
+  outline: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+button,
+button:active,
+button:focus,
+button:hover,
+input,
+input:active,
+input:focus,
+input:hover,
+textarea,
+textarea:focus {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+
+button {
+  transition: 0.35s;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pre-title {
+  color: $primary;
+  text-transform: uppercase;
+}
+
+.title {
+  @include fontz(22px, 14);
+  font-weight: bold;
+}
+
+.xoo-wsc-ft-buttons-cont {
+  .xoo-wsc-ft-btn-cart {
+    background-color: #ccc;
+    padding: 5px 10px;
+    color: $white;
+  }
+
+  .xoo-wsc-ft-btn-checkout {
+    background-color: $primary;
+    padding: 5px 10px;
+    color: $white;
+  }
+}
+
+.woocommerce-message, .woocommerce-error {
+  padding: 0 0 20px;
+  a {
+    color: $primary;
+  }
+}
+
+body {
+  &.woocommerce-cart, &.woocommerce-checkout  {
+    .site-main{
+      padding: 50px 0;
+    }
+    
+  }
+}
+
+.fixed {
+  position: sticky;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 10%);
+  background-color: $white;
+  z-index: 5;
+  top: 0;
+  
+  &.header {
+    border-bottom: none;
+  }
+
+  .header__logo {
+    img {
+      width: 60%;
+    }
+  }
+}
+
+.woocommerce-checkout {
+      
+
+  .woocommerce {
+    .woocommerce-checkout {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    }
+    
+    .woocommerce-NoticeGroup-checkout {
+      flex: 1 0 100%;
+      padding: 20px;
+      background-color: $primary ;
+      color: $white;
+      font-size: 18px;
+    }
+
+    .woocommerce-checkout-wrap { 
+      flex: 1 1 50%;
+      padding: 20px;
+      @media (max-width:$bp3) {
+        flex: 1 0 100%;
+        padding: 0px;
+      }
+    }
+
+    p {
+      margin: 10px 0;
+    }
+    label {
+      font-weight: 600;
+      margin: 0 20px 20px 0;
+      font-size: 16px; 
+    }
+
+    .required {
+      color: #dc3545;
+    }   
+
+    input[type="text"], input[type="email"],input[type="tel"], input[type="password"], textarea  {
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 14px;
+      font-family: $pop;
+      border-radius: 20px;
+    }
+
+    textarea {
+      height: 200px;
+    }
+
+
+
+    .woocommerce-order-details, .woocommerce-checkout-review-order {
+      table td, table th {
+        width: 50%;
+        border: 1px solid #ccc;
+      }
+
+      table {
+        margin: 50px 0;
+
+        thead {
+          border-radius: 20px;
+        }
+      }
+      
+    }
+  }
+
+  .btn__primary {
+    padding: 10px 20px;
+  }
+ 
+}
+
+.select2-container--default {
+  width: 100% !important;
+}
+.select2-selection, .select2-selection--single {
+  padding: 10px !important;
+  min-height: 50px !important;
+  border-radius: 40px !important;
+}
+
+
+.select2-dropdown, .select2-dropdown--below {
+  padding: 10px !important;
+  max-width: 100%;
+  border-bottom-right-radius: 40px !important;
+  border-bottom-left-radius: 40px !important;
+}
+
+.select2-selection--single[aria-expanded="true"] {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.select2-earch, .select2-search--dropdown {
+  input {
+    padding: 10px !important;
+    border-radius: 40px;
+  }
+}
+
+
+.woocommerce-input-wrapper {
+  .select {
+    padding: 20px;
+    width: 100%; 
+    border-radius: 40px;
+    background: transparent;
+    border: 1px solid #ccc;
+  } 
+}
+  
+
+
+
+ .select2-selection__arrow {
+  top: 50% !important;
+  right: 1% !important;
+  transform: translateY(-50%) !important;
+  
+}

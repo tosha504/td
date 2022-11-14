@@ -1,0 +1,167 @@
+.woocommerce-shop, .single-product {
+    .shop {
+        &__main-banner {
+            background-repeat: no-repeat;    
+            background-position: top right; 
+            background-size: cover;
+            @media (min-width:$bp3) {
+                background-position: left; 
+            }
+
+            h1 {
+                @include fontz(35px, 45);
+                color: $white;
+                padding: 100px 0;
+                text-align: right;
+                span {
+                    color: $primary;
+                }
+                @media (min-width:$bp3) {
+                    padding: 200px 0;
+                }
+            }
+        }
+
+        &__items {
+            padding: 50px 0 0;
+
+            &_wrap {
+                margin-bottom: 20px;
+            }
+            
+            .btn {
+                // max-width: 200px;
+                text-align: center;
+                margin: 0 5px;
+                padding: 10px 0;
+
+                &.slick-current {
+                    background: $primary;
+                    color: $white;
+                     @media (min-width:$bp3) {
+                        &:hover {
+                            background: $white;
+                            color: $primary;
+                            border: 1px solid $primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__banner {
+            margin: 40px 0 25px;
+            padding: 10px 0;
+            border-radius: 40px;
+            @media (min-width:$bp2) {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                &_content, &_image {
+                    flex: 1 1 50%;
+                }
+            }
+            
+
+            &_content {
+                text-align: center;
+                @media (min-width:$bp2) {
+                    text-align: left;
+                    padding: 5%;
+                }
+
+                h2 {
+                    padding: 10px 0;
+                    text-transform: uppercase;
+                    border-radius: 40px;
+                    font-weight: normal;
+                    // background-color: $white;
+                    color: $white;
+                    margin: 0 auto;
+                    @media (min-width:$bp2) {
+                    }
+                }
+
+                h1 {
+                    color: $white;
+                    @include fontz(35px, 30);
+                }
+            }
+        }
+
+        &__products {
+            display: flex;
+            padding: 20px 0 50px;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+            @media (min-width:$bp1) {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            a {
+                box-shadow: 1px 1px 30px -16px rgba(66, 68, 90, 1);
+                border-radius: 20px;
+                color: #232323;
+                padding: 20px;
+                max-width: 400px;
+                width: 100%;
+                text-align: center;
+                margin: 20px auto;
+
+                @media (min-width:$bp3) {
+                    &:hover {
+                        .shop__products_product-buttons .btn{
+                            background: $white;
+                            color: $primary;
+                            border: 1px solid $primary;
+                        }
+                    }
+                }
+
+                .btn {
+                    background: $primary;
+                    color: $white;
+                    border: 1px solid transparent;
+                }
+            }
+            &_product {
+                
+            //     max-width: calc(100%/3);
+                // flex: 1 1 33.3333%;
+                // flex: 1 1 100%;
+            
+                
+            }
+
+            &_product-image {
+                img {
+                    max-width: 250px;
+                    max-height: 250px;
+                }
+            }
+
+            &_product-items, &_product-buttons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &_product-items {
+                color: $primary;
+                font-size: 30px;
+            }
+
+            &_product-buttons {
+                .btn {
+                    transition: 0.35s;
+                    padding: 5px 10px;
+                }
+            }
+        }
+
+
+    }
+}
+

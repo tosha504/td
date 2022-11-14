@@ -1,0 +1,54 @@
+.error {
+
+    &__wrap {
+        background-color: #f19000;
+        padding: 50px 0;
+        position: relative;
+        @media (max-width:$bp2) {
+            padding: 30px 0;
+        }
+
+        &_content {
+            background: url(../assets/image/bg-blue.jpg) no-repeat right;
+            clip-path: polygon(4% 0,100% 0,100% 100%,0 100%);
+            background-position: 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: 33%;
+            display: flex;
+            bottom: 0;
+            align-items: center;
+            @media (max-width:$bp2) {
+                clip-path: polygon(14% 0,100% 0,100% 100%,0 100%);
+            }
+            @media (max-width:$bp1) {
+                clip-path: polygon(20% 0,100% 0,100% 100%,0 100%);
+            }
+        }
+
+        &_content-title {
+            margin-left: 5%;
+            color: #fff;
+            @include fontz(24px,10);
+            font-weight: 500;
+            @media (max-width:$bp2) {
+                display: none;
+            }
+        }
+    }
+
+   
+}
+
+.e404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include fontz(100px,200);
+    a {
+        color:red;
+        
+    }
+}
