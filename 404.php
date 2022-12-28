@@ -12,7 +12,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-	<section class="error">
+		<section class="error">
 			<div class="container">
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'topdrive' ); ?></p>

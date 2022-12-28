@@ -61,6 +61,7 @@ function createShopBannerAndProductstemplate($props) {
         $background = get_field('bg', 'product_cat_' . $term->term_id); 
         $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
     if($thumbnail_id) { ?>
+    
         <div class="shop__banner" <?php if($background) echo 'style="background:' . $background . '"'; ?>>
             <div class="shop__banner_content">
                 <?php 
@@ -68,17 +69,17 @@ function createShopBannerAndProductstemplate($props) {
                     if($term->name) echo '<h1>' . $term->name . '</h1>'; 
                 ?>
             </div>
+            
             <div class="shop__banner_image">
                 <?php echo  wp_get_attachment_image( $thumbnail_id,  'full' ); ?>
             </div>
         </div>
     <?php } ?>
-    
     <div class="shop__products">
         <?php 
         while ( $query->have_posts() ) { $query->the_post();
         $product = wc_get_product(get_the_ID()); 
-        ?>  
+        $attributes = $product->get_attributes(); ?>  
             <a href="<?php echo get_permalink(); ?>">
                 <div class="shop__products_product"> 
                 
@@ -98,15 +99,21 @@ function createShopBannerAndProductstemplate($props) {
         <?php }
         wp_reset_query(); ?>
     </div>
+        <!-- <?php 
+            $args = array(
+                'post_type'      => 'product',
+                'posts_per_page' => 10,
+            );
         
+            $loop = new WP_Query( $args );
+            var_dump($loop);
+            while ( $loop->have_posts() ) : $loop->the_post();
+                global $product;
+	var_dump($loop);
+                echo '<br /><a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().' '.get_the_title().'</a>';
+            endwhile;
+            wp_reset_query();
+        ?> -->
 <?php
-}
-
-
-function get_products_ajax() {
-    if(isset( $_POST['cat_id']) && !empty( $_POST['cat_id'])) {
-        $cat_id = sanitize_text_field( $_POST['cat_id']);
-        echo createShopBannerAndProductstemplate($cat_id);
-    }
 }
 

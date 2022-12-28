@@ -24,9 +24,39 @@
 
         &__items {
             padding: 50px 0 0;
-
+            position: relative;
+            .fake-arrow-after, .fake-arrow-before {
+                display: none;
+            }
+            @media (min-width:$bp3) {
+                .fake-arrow-after, .fake-arrow-before {
+                    display: block;
+                }
+            margin:0 50px;
+                .fake-arrow-after{
+                    width: 59px;
+                    height: 60px;
+                    position: absolute;
+                    right: -4%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                .fake-arrow-before {
+                    width: 59px;
+                    height: 60px;
+                    position: absolute;
+                    left: -4%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
             &_wrap {
                 margin-bottom: 20px;
+                @media (min-width:$bp3) {
+                margin:0 50px;
+                }
             }
             
             .btn {
@@ -35,10 +65,10 @@
                 margin: 0 5px;
                 padding: 10px 0;
 
-                &.slick-current {
+                &.btn__active {
                     background: $primary;
                     color: $white;
-                     @media (min-width:$bp3) {
+                        @media (min-width:$bp3) {
                         &:hover {
                             background: $white;
                             color: $primary;
@@ -108,7 +138,7 @@
                 max-width: 400px;
                 width: 100%;
                 text-align: center;
-                margin: 20px auto;
+                margin: 20px 10px;
 
                 @media (min-width:$bp3) {
                     &:hover {

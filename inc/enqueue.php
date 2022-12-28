@@ -42,6 +42,9 @@ add_action( 'wp_ajax_get_product_cat', 'get_product_cat' );
 add_action( 'wp_ajax_nopriv_get_product_cat', 'get_product_cat' );
 
 function get_product_cat() {
-    echo get_products_ajax();
+    if(isset( $_POST['cat_id']) && !empty( $_POST['cat_id'])) {
+        $cat_id = sanitize_text_field( $_POST['cat_id']);
+        createShopBannerAndProductstemplate($cat_id);
+    }
     die();
 }

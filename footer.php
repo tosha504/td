@@ -52,6 +52,7 @@ $footer_right = get_field('footer_right', 'options'); ?>
 			<?php } ?>	
 		</div>
 	</footer><!-- #colophon -->
+
 </div><!-- #wrapper -->
 
 <?php wp_footer(); ?>

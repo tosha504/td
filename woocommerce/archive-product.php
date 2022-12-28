@@ -35,7 +35,13 @@ get_header( 'shop' ); ?>
 		<?php
 		$my_categories = get_categories('taxonomy=product_cat&type=product'); 
 		if(!empty($my_categories)) { ?> 
-			<div class="shop__items"> 
+			<div class="shop__items">
+				<span class="fake-arrow-after">
+					<img src="<?php echo get_template_directory_uri() . '/assets/arrowtd.svg'?>" alt="">
+				</span> 
+				<span class="fake-arrow-before">
+					<img src="<?php echo get_template_directory_uri() . '/assets/arrowtdback.svg'?>" alt="">
+				</span> 
 				<?php 
 				$args = array(
 					'post_type'      => 'product',
@@ -49,15 +55,18 @@ get_header( 'shop' ); ?>
 								<?php echo esc_attr($mas->name); ?>
 							</a>
 						<?php } ?>
+						
 					</div>
 					<?php 
 					$index = array_key_first($my_categories); ?>
 				<?php } ?>
 				<?php wp_reset_query(); ?>
 			</div>
-			
+
+			<div class="box"><div class="loader"></div></div>
+
 			<div id="shopProducts" >
-				<?php echo createShopBannerAndProductstemplate($my_categories[$index]->name); ?>
+				<?php createShopBannerAndProductstemplate($my_categories[$index]->name); ?>
 			</div>
 		<?php } ?>
 	</div>

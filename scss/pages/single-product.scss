@@ -127,6 +127,16 @@ body {
                             }
                         }
                     }
+
+                    .priceSection {
+                        .woocommerce-Price-amount {
+                            color: $primary;
+                            font-size: 34px;
+                            
+                        }
+                        margin-bottom: 15px;
+                    }
+                    
                 }
             }
            
